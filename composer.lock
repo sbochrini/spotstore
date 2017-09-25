@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca77d2fb77116921962dcb2203dbabf4",
+    "content-hash": "bef1de48a7752d0c0dd8f61ad370ba21",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -721,6 +721,71 @@
             "time": "2017-07-13T13:11:05+00:00"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v5.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6",
+                "reference": "2f6dc39ab3655724a615fe8a652d8b7f04fc9ac6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.5.*",
+                "illuminate/routing": "5.5.*",
+                "illuminate/session": "5.5.*",
+                "illuminate/support": "5.5.*",
+                "illuminate/view": "5.5.*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "illuminate/database": "5.5.*",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~5.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2017-08-31T14:46:03+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.41",
             "source": {
@@ -1375,6 +1440,44 @@
                 "uuid"
             ],
             "time": "2017-08-04T13:39:04+00:00"
+        },
+        {
+            "name": "secondtruth/startmin",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/secondtruth/startmin.git",
+                "reference": "cfe0c0a9797831519d67f90f3d3732cd342c76cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/secondtruth/startmin/zipball/cfe0c0a9797831519d67f90f3d3732cd342c76cc",
+                "reference": "cfe0c0a9797831519d67f90f3d3732cd342c76cc",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Neff",
+                    "email": "christian.neff@gmail.com",
+                    "homepage": "http://www.secondtruth.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Admin dashboard template for Bootstrap",
+            "homepage": "http://www.secondtruth.de",
+            "keywords": [
+                "admin",
+                "backend",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2016-02-29T17:48:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
