@@ -2,7 +2,9 @@
 @section('content')
 
             <div class="title m-b-md">
-                SpotStore
+                @foreach ($cat as $c)
+                {{ $c->cat_id }}
+                    @endforeach
             </div>
 
             <div class="links">

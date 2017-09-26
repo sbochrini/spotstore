@@ -49,11 +49,15 @@
 
 </head>
 <body>
-
+@include('partials.topbar')
 @include('partials.nav')
 
-<div class="container">
-    @yield('content')
+<div class="main">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">@yield('content')</div>
+    </div>
+
 </div>
 
 <!-- jQuery -->
