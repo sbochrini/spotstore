@@ -189,7 +189,6 @@
 <script>
     new WOW().init();
 </script>
-
 @include('partials.flash')
 
 </body>

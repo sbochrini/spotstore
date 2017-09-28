@@ -39,25 +39,31 @@
 
     </div>
 </nav>--}}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url('/') }}">
-        <i class="material-icons"></i>Brands4all
-    </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <span class="h1" class="navbar-brand mb-0">Navbar</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('/') }}">Αρχική <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">Disabled</a>
-            </li>
+            @foreach($pr_categories as $pr_category)
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdown_cat_{{ $pr_category->cat_id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ $pr_category->cat_name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_cat_{{ $pr_category->cat_id }}">
+                        <a class="dropdown-item" href="#">lllllll</a>
+                        <a class="dropdown-item" href="#">lllllll</a>
+                        @foreach($pr_category->parent() as $sec_categories)
+                            <a class="dropdown-item" href="#">{{ $sec_categories->cat_name }} lllllll</a>
+                        @endforeach
+                    </div>
+                </li>
+            @endforeach
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
