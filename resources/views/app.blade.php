@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">--}}
     <!-- Bootstrap core mdb.css -->
-    <link rel="stylesheet" href="{{ asset('css/mdb.css') }}">
+   {{-- <link rel="stylesheet" href="{{ asset('css/mdb.css') }}">
     <!-- Include app.less file -->
     <link rel="stylesheet" href="{{ asset('less/app.less') }}">
     <!-- Include app.scss file -->
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('css/lity.css') }}">
 
     <!-- Added the main.css file that combines app.scss and app.css togather -->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">--}}
 
 
     <!-- Material Design Icons -->

@@ -51,18 +51,28 @@
                 <a class="nav-link" href="{{ url('/') }}">Αρχική <span class="sr-only">(current)</span></a>
             </li>
             @foreach($pr_categories as $pr_category)
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdown_cat_{{ $pr_category->cat_id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdown_cat_{{ $pr_category->id }}" data-toggle="dropdown" aria-haspopup="true" >
                         {{ $pr_category->cat_name }}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_cat_{{ $pr_category->cat_id }}">
-                        <a class="dropdown-item" href="#">lllllll</a>
-                        <a class="dropdown-item" href="#">lllllll</a>
-                        @foreach($pr_category->parent() as $sec_categories)
-                            <a class="dropdown-item" href="#">{{ $sec_categories->cat_name }} lllllll</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_cat_{{ $pr_category->id }}">
+                        <?php $secondaries=App\Category::childcategories( $pr_category) ?>
+                        @foreach($secondaries as $secondary)
+                                <li id="a_cat_{{ $secondary->id }}" class="dropdown-item" href="#">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="seccat_lalalo" data-toggle="dropdown" aria-haspopup="true" >
+                                            {{ $secondary->cat_name }}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="seccat_lalalo">
+                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
+                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
+                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
+                                        </div>
+                                    </div>
+                                </li>
                         @endforeach
                     </div>
-                </li>
+                </div>
             @endforeach
         </ul>
         <form class="form-inline my-2 my-lg-0">

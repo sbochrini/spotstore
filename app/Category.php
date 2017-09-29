@@ -40,7 +40,7 @@ class Category extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function product() {
-        return $this->hasMany('App\Product', 'cat_id');
+        return $this->hasMany('App\Product', 'id');
     }
 
     /**
@@ -48,6 +48,9 @@ class Category extends Model {
      */
     public static function primarycategories(){
         return static::where('cat_parent_id',0)->get();
+    }
+    public static function childcategories(Category $cat){
+        return static::where('cat_parent_id',$cat->id)->get();
     }
     /**
      * Delete all sub categories when Main (Parent) category is deleted.
