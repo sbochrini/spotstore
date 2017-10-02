@@ -39,7 +39,7 @@
 
     </div>
 </nav>--}}
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+{{--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
     <span class="h1" class="navbar-brand mb-0">Navbar</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,20 +56,20 @@
                         {{ $pr_category->cat_name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_cat_{{ $pr_category->id }}">
-                        <?php $secondaries=App\Category::childcategories( $pr_category) ?>
+                         $secondaries=App\Category::childcategories( $pr_category)
                         @foreach($secondaries as $secondary)
-                                <li id="a_cat_{{ $secondary->id }}" class="dropdown-item" href="#">
-                                    <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" id="seccat_lalalo" data-toggle="dropdown" aria-haspopup="true" >
+                                --}}{{--<li id="a_cat_{{ $secondary->id }}" class="dropdown-item" href="#">--}}{{--
+                                    <li class="dropdown-submenu" id="a_cat_{{ $secondary->id }}" >
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="seccat_lalalo" data-toggle="dropdown" aria-haspopup="true" >
                                             {{ $secondary->cat_name }}
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="seccat_lalalo">
-                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
-                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
-                                            <a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                        <ul class="dropdown-menu" aria-labelledby="seccat_lalalo">
+                                            <li><a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a></li>
+                                            <li><a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a></li>
+                                            <li><a id="a_seccat_{{ $secondary->id }}" class="dropdown-item" href="#">lalallo</a></li>
+                                        </ul>
+                                    </li>
+                                --}}{{--</li>--}}{{--
                         @endforeach
                     </div>
                 </div>
@@ -80,4 +80,182 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
+</nav>--}}
+<nav id="cbp-hrmenu" class="cbp-hrmenu">
+    <span class="h1" class="navbar-brand mb-0">Navbar</span>
+    <ul>
+        <li><a href="#">Αρχική</a></li>
+        @foreach($pr_categories as $pr_category)<?php  $secondaries=App\Category::childcategories( $pr_category); ?>
+        <li>
+            <a href="#">{{ $pr_category->cat_name }}</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    @foreach($secondaries as $secondary)
+                    <div>
+                        <h4>{{ $secondary->cat_name }}</h4>
+                        <ul>
+                            <li><a href="#">Catch the Bullet</a></li>
+                            <li><a href="#">Snoopydoo</a></li>
+                            <li><a href="#">Fallen Angel</a></li>
+                            <li><a href="#">Sui Maker</a></li>
+                            <li><a href="#">Wave Master</a></li>
+                            <li><a href="#">Golf Pro</a></li>
+                        </ul>
+                    </div>
+                    @endforeach
+                </div>{{--cbp-hrsub-inner--}}
+            </div>{{--cbp-hrsub --}}
+        </li>
+        @endforeach
+        <li>
+            <a href="#">Downloads</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>Education &amp; Learning</h4>
+                        <ul>
+                            <li><a href="#">Learn Thai</a></li>
+                            <li><a href="#">Math Genius</a></li>
+                            <li><a href="#">Chemokid</a></li>
+                        </ul>
+                        <h4>Professionals</h4>
+                        <ul>
+                            <li><a href="#">Success 1.0</a></li>
+                            <li><a href="#">Moneymaker</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Entertainment</h4>
+                        <ul>
+                            <li><a href="#">Gadget Finder</a></li>
+                            <li><a href="#">Green Tree Express</a></li>
+                            <li><a href="#">Green Tree Pro</a></li>
+                            <li><a href="#">Holy Cannoli</a></li>
+                            <li><a href="#">Wobbler 3.0</a></li>
+                            <li><a href="#">Coolkid</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Games</h4>
+                        <ul>
+                            <li><a href="#">Catch the Bullet</a></li>
+                            <li><a href="#">Snoopydoo</a></li>
+                            <li><a href="#">Fallen Angel</a></li>
+                            <li><a href="#">Sui Maker</a></li>
+                            <li><a href="#">Wave Master</a></li>
+                            <li><a href="#">Golf Pro</a></li>
+                        </ul>
+                    </div>
+                </div>{{--cbp-hrsub-inner--}}
+            </div> {{--/cbp-hrsub --}}
+        </li>
+        <li>
+            <a href="#">Applications</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>Learning &amp; Games</h4>
+                        <ul>
+                            <li><a href="#">Catch the Bullet</a></li>
+                            <li><a href="#">Snoopydoo</a></li>
+                        </ul>
+                        <h4>Utilities</h4>
+                        <ul>
+                            <li><a href="#">Gadget Finder</a></li>
+                            <li><a href="#">Green Tree Express</a></li>
+                            <li><a href="#">Green Tree Pro</a></li>
+                            <li><a href="#">Wobbler 3.0</a></li>
+                            <li><a href="#">Coolkid</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Education</h4>
+                        <ul>
+                            <li><a href="#">Learn Thai</a></li>
+                            <li><a href="#">Math Genius</a></li>
+                            <li><a href="#">Chemokid</a></li>
+                        </ul>
+                        <h4>Professionals</h4>
+                        <ul>
+                            <li><a href="#">Success 1.0</a></li>
+                            <li><a href="#">Moneymaker</a></li>
+                        </ul>
+                    </div>
+                </div> {{--/cbp-hrsub-inner--}}
+            </div>{{--cbp-hrsub--}}
+        </li>
+        <li>
+            <a href="#">Projects</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>Learning &amp; Games</h4>
+                        <ul>
+                            <li><a href="#">Catch the Bullet</a></li>
+                            <li><a href="#">Snoopydoo</a></li>
+                            <li><a href="#">Fallen Angel</a></li>
+                            <li><a href="#">Sui Maker</a></li>
+                            <li><a href="#">Wave Master</a></li>
+                            <li><a href="#">Golf Pro</a></li>
+                        </ul>
+                        <h4>Utilities</h4>
+                        <ul>
+                            <li><a href="#">Gadget Finder</a></li>
+                            <li><a href="#">Green Tree Express</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Entertainment</h4>
+                        <ul>
+                            <li><a href="#">Gadget Finder</a></li>
+                            <li><a href="#">Green Tree Express</a></li>
+                            <li><a href="#">Green Tree Pro</a></li>
+                            <li><a href="#">Holy Cannoli</a></li>
+                            <li><a href="#">Wobbler 3.0</a></li>
+                            <li><a href="#">Coolkid</a></li>
+                        </ul>
+                    </div>
+                </div>{{-- /cbp-hrsub-inner --}}
+            </div>{{-- /cbp-hrsub --}}
+        </li>
+        <li>
+            <a href="#">Freeware</a>
+            <div class="cbp-hrsub">
+                <div class="cbp-hrsub-inner">
+                    <div>
+                        <h4>Utilities</h4>
+                        <ul>
+                            <li><a href="#">Green Tree Pro</a></li>
+                            <li><a href="#">Wobbler 3.0</a></li>
+                            <li><a href="#">Coolkid</a></li>
+                        </ul>
+                        <h4>Education</h4>
+                        <ul>
+                            <li><a href="#">Learn Thai</a></li>
+                            <li><a href="#">Math Genius</a></li>
+                            <li><a href="#">Chemokid</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Professionals</h4>
+                        <ul>
+                            <li><a href="#">Success 1.0</a></li>
+                            <li><a href="#">Moneymaker</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Learning &amp; Games</h4>
+                        <ul>
+                            <li><a href="#">Catch the Bullet</a></li>
+                            <li><a href="#">Snoopydoo</a></li>
+                            <li><a href="#">Fallen Angel</a></li>
+                            <li><a href="#">Sui Maker</a></li>
+                            <li><a href="#">Wave Master</a></li>
+                            <li><a href="#">Golf Pro</a></li>
+                        </ul>
+                    </div>
+                </div>{{-- /cbp-hrsub-inner --}}
+            </div>{{-- /cbp-hrsub --}}
+        </li>
+    </ul>
 </nav>
